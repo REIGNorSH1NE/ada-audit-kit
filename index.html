@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADA Title II & WCAG 2.1 AA Digital Accessibility Audit Kit | PDF Foundry</title>
+  <meta name="description" content="Operational audit instrument, interactive AcroForm workbook with embedded AcroJS scoring engine, Word SOP, and formula-driven Excel calculator for DOJ 28 CFR Part 35 compliance.">
+  
+  <!-- Open Graph / Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ADA Title II & WCAG 2.1 AA Digital Accessibility Audit Kit (2026.1)">
+  <meta property="og:description" content="Complete self-exemplifying PDF/UA-1 audit instrument, AcroJS calculator, and white-label SOP for municipal and agency compliance.">
+  <meta property="og:image" content="./storefront_cover_1280x720.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ADA Title II & WCAG 2.1 AA Digital Accessibility Audit Kit">
+  <meta name="twitter:description" content="DOJ 28 CFR Part 35 compliance framework with interactive AcroForms and 350-point rubric.">
+  <meta name="twitter:image" content="./storefront_cover_1280x720.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lemon Squeezy Modal Checkout Overlay Script -->
+  <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              ink: '#0F172A',
+              navy: '#1E3A8A',
+              navyHover: '#172554',
+              muted: '#334155',
+              surface: '#F8FAFC',
+              card: '#F1F5F9',
+              border: '#CBD5E1'
+            }
+          },
+          fontFamily: {
+            sans: ['Segoe UI', 'system-ui', 'sans-serif'],
+            mono: ['Consolas', 'Menlo', 'monospace']
+          }
+        }
+      }
+    };
+
+    // =========================================================================
+    // LEMON SQUEEZY CONFIGURATION
+    // Replace with your Lemon Squeezy Store slug and Variant IDs after publishing:
+    // =========================================================================
+    window.LEMON_CONFIG = {
+      storeSlug: "pdf-foundry", // e.g. "my-agency" (from https://[storeSlug].lemonsqueezy.com)
+      variants: {
+        solo: "YOUR_SOLO_VARIANT_ID",         // Tier 1 ($197)
+        agency: "YOUR_AGENCY_VARIANT_ID",     // Tier 2 ($497)
+        enterprise: "YOUR_ENTERPRISE_VARIANT_ID" // Tier 3 ($1,499)
+      }
+    };
+
+    function handleCheckout(tierKey, event) {
+      const cfg = window.LEMON_CONFIG;
+      const variantId = cfg.variants[tierKey];
+
+      if (!variantId || variantId.startsWith("YOUR_")) {
+        event.preventDefault();
+        alert(
+          "Lemon Squeezy Setup Required:\\n\\n" +
+          "1. Publish your product in your Lemon Squeezy Dashboard.\\n" +
+          "2. Copy your Variant ID from Products -> Share -> Checkout Link.\\n" +
+          "3. Paste it into the window.LEMON_CONFIG block at the top of index.html.\\n\\n" +
+          "Refer to LEMON_SQUEEZY_SETUP_GUIDE.md for detailed steps."
+        );
+        return false;
+      }
+
+      // If configured, navigate via Lemon Squeezy overlay modal
+      const checkoutUrl = `https://${cfg.storeSlug}.lemonsqueezy.com/buy/${variantId}?embed=1`;
+      window.createLemonSqueezyCheckout ? window.createLemonSqueezyCheckout({ url: checkoutUrl }) : (window.location.href = checkoutUrl);
+      return false;
+    }
+  </script>
+</head>
+<body class="bg-[#F8FAFC] text-brand-ink font-sans antialiased">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-brand-navy text-white text-xs py-2 px-4 text-center font-mono tracking-wide">
+    MANDATORY COMPLIANCE DEADLINE: DOJ 28 CFR PART 35 ENFORCEMENT BEGINS APRIL 24, 2026
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="border-b border-brand-border bg-white sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded bg-brand-navy flex items-center justify-center text-white font-mono font-bold text-sm">PF</div>
+        <div>
+          <span class="font-bold text-brand-ink text-base tracking-tight">PDF Foundry</span>
+          <span class="hidden sm:inline-block ml-2 text-xs font-mono text-brand-navy bg-brand-card px-2 py-0.5 rounded border border-brand-border">STD-2026.1</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="#features" class="text-sm font-medium text-brand-muted hover:text-brand-ink hidden md:inline-block">Audit Framework</a>
+        <a href="#pricing" class="text-sm font-medium text-brand-muted hover:text-brand-ink hidden md:inline-block">Commercial Licenses</a>
+        <a href="#pricing" class="bg-brand-navy hover:bg-brand-navyHover text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded shadow-sm transition">
+          Get Audit Kit
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7">
+        <div class="inline-flex items-center space-x-2 text-xs font-mono font-semibold text-brand-navy bg-brand-card border border-brand-border px-3 py-1 rounded-full mb-4">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>DOJ 28 CFR §§ 35.200–35.205 VERIFIED</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-ink tracking-tight leading-tight mb-4">
+          The Operational Audit Kit for Municipal & Agency ADA Title II Compliance
+        </h1>
+        <p class="text-base sm:text-lg text-brand-muted mb-6 leading-relaxed">
+          Stop relying on $30 marketplace checklists that ironically <strong>fail accessibility audits themselves</strong>. Deploy a self-exemplifying PDF/UA-1 tagged workbook with embedded AcroJS calculation engine, editable Word SOP, and 350-point Excel rubric.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 mb-8">
+          <a href="#pricing" class="bg-brand-navy hover:bg-brand-navyHover text-white text-center font-bold px-6 py-3.5 rounded shadow transition text-sm">
+            Download Commercial Bundle ($197+)
+          </a>
+          <a href="./sample_interactive_preview.pdf" target="_blank" class="border border-brand-border hover:bg-brand-card text-brand-muted hover:text-brand-ink text-center font-semibold px-6 py-3.5 rounded transition text-sm flex items-center justify-center space-x-2">
+            <svg class="w-4 h-4 text-brand-navy" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z"></path></svg>
+            <span>View Free 2-Page Sample PDF</span>
+          </a>
+        </div>
+
+        <!-- Badges -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono text-brand-muted border-t border-brand-border pt-6">
+          <div class="flex items-center space-x-1.5">
+            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            <span>ISO 14289-1 (PDF/UA)</span>
+          </div>
+          <div class="flex items-center space-x-1.5">
+            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            <span>WCAG 2.1 Level AA</span>
+          </div>
+          <div class="flex items-center space-x-1.5">
+            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            <span>NVDA / JAWS Parity</span>
+          </div>
+          <div class="flex items-center space-x-1.5">
+            <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+            <span>Section 508 Ready</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual -->
+      <div class="lg:col-span-5">
+        <div class="relative rounded-lg overflow-hidden border border-brand-border shadow-xl bg-white">
+          <img src="./storefront_cover_1280x720.png" alt="ADA Title II Audit Kit Hero Cover" class="w-full h-auto">
+          <div class="p-3 bg-brand-card border-t border-brand-border flex items-center justify-between text-xs font-mono text-brand-muted">
+            <span>Verified 725 KB Commercial ZIP</span>
+            <span class="text-brand-navy font-semibold">Lemon Squeezy Fulfillment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem & Competitor Gap -->
+  <section class="bg-white border-y border-brand-border py-14">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="max-w-3xl mb-10">
+        <h2 class="text-xs font-mono font-bold text-brand-navy uppercase tracking-wider mb-2">Market Gap Assessment</h2>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-ink tracking-tight">The Digital Accessibility Dilemma</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-lg border border-red-200 bg-red-50/50">
+          <div class="flex items-center space-x-2 text-red-700 font-bold mb-3">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
+            <span class="text-base">Generic Market Offerings</span>
+          </div>
+          <ul class="space-y-2 text-sm text-brand-muted">
+            <li>• <strong>$15,000–$85,000/yr Automated DOM Scanners:</strong> Flag surface HTML bugs (~30% of WCAG) but completely fail to audit PDF tag trees, NVDA focus parity, or 28 CFR § 35.201 statutory exemptions.</li>
+            <li>• <strong>$30 Flat Marketplace Checklists:</strong> Unstructured, untagged PDFs that fail accessibility checkers themselves, lack interactive form controls, and offer no scoring engine.</li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-lg border border-emerald-200 bg-emerald-50/50">
+          <div class="flex items-center space-x-2 text-emerald-800 font-bold mb-3">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+            <span class="text-base">PDF Foundry Compliance Kit</span>
+          </div>
+          <ul class="space-y-2 text-sm text-brand-muted">
+            <li>• <strong>Self-Exemplifying PDF/UA-1 Standards:</strong> 100% verified ISO 14289-1 tagged structure tree, table column headers, and NVDA dual-mode reading parity.</li>
+            <li>• <strong>36 Tagged AcroForms + Embedded AcroJS Engine:</strong> Real-time formula calculation in Adobe Acrobat without macro security warnings.</li>
+            <li>• <strong>White-Label Word SOP & 350-Point Excel Rubric:</strong> Clean corporate deliverables ready for municipal coordinator handoffs or client consulting engagements.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deliverables Deep Dive -->
+  <section id="features" class="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-xs font-mono font-bold text-brand-navy uppercase tracking-wider mb-2">Package Deliverables</h2>
+      <h3 class="text-3xl font-extrabold text-brand-ink tracking-tight">Four Production-Grade Instruments</h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Item 1 -->
+      <div class="bg-white p-6 rounded-lg border border-brand-border shadow-sm">
+        <div class="text-xs font-mono font-bold text-brand-navy mb-2">INSTRUMENT 01 // INTERACTIVE PDF</div>
+        <h4 class="font-bold text-lg text-brand-ink mb-2">PDF/UA-1 Audit Workbook</h4>
+        <p class="text-sm text-brand-muted mb-4">5 pages, 36 tagged AcroForm controls, live AcroJS composite calculation engine, and 2 full-width vector flowcharts covering 28 CFR § 35.201(a)–(e) exceptions.</p>
+        <span class="text-xs font-mono bg-brand-card text-brand-navy px-2 py-1 rounded border border-brand-border">ISO 14289-1 Verified</span>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="bg-white p-6 rounded-lg border border-brand-border shadow-sm">
+        <div class="text-xs font-mono font-bold text-brand-navy mb-2">INSTRUMENT 02 // EDITABLE SOP</div>
+        <h4 class="font-bold text-lg text-brand-ink mb-2">MS Word Standard Operating Procedure</h4>
+        <p class="text-sm text-brand-muted mb-4">10 accessible tables, pagination locks, clean OpenXML metadata, and vector .emf diagrams. Pre-configured for white-label client handoffs.</p>
+        <span class="text-xs font-mono bg-brand-card text-brand-navy px-2 py-1 rounded border border-brand-border">White-Label Ready</span>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="bg-white p-6 rounded-lg border border-brand-border shadow-sm">
+        <div class="text-xs font-mono font-bold text-brand-navy mb-2">INSTRUMENT 03 // FORMULA SPREADSHEET</div>
+        <h4 class="font-bold text-lg text-brand-ink mb-2">Excel Scoring Calculator</h4>
+        <p class="text-sm text-brand-muted mb-4">2 sheets (Audit Rubric + Decision Matrix), 350-point automated scoring formula, keyboard validation dropdowns (Alt+Down), zero merged cells.</p>
+        <span class="text-xs font-mono bg-brand-card text-brand-navy px-2 py-1 rounded border border-brand-border">Screen-Reader Safe</span>
+      </div>
+    </div>
+
+    <!-- Gallery / Page Previews -->
+    <div class="mt-16 border border-brand-border rounded-lg bg-white p-6 shadow-sm">
+      <h4 class="text-base font-bold text-brand-ink mb-4 flex items-center justify-between">
+        <span>300-DPI Visual Inspection Gallery</span>
+        <span class="text-xs font-mono text-brand-muted">5-Page Master Layout</span>
+      </h4>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        <a href="./page_1_300dpi.png" target="_blank" class="border border-brand-border rounded overflow-hidden hover:opacity-90 transition">
+          <img src="./page_1_300dpi.png" alt="Page 1 Layout" class="w-full h-auto">
+        </a>
+        <a href="./page_2_300dpi.png" target="_blank" class="border border-brand-border rounded overflow-hidden hover:opacity-90 transition">
+          <img src="./page_2_300dpi.png" alt="Page 2 Layout" class="w-full h-auto">
+        </a>
+        <a href="./page_3_300dpi.png" target="_blank" class="border border-brand-border rounded overflow-hidden hover:opacity-90 transition">
+          <img src="./page_3_300dpi.png" alt="Page 3 Layout" class="w-full h-auto">
+        </a>
+        <a href="./page_4_300dpi.png" target="_blank" class="border border-brand-border rounded overflow-hidden hover:opacity-90 transition">
+          <img src="./page_4_300dpi.png" alt="Page 4 Layout" class="w-full h-auto">
+        </a>
+        <a href="./page_5_300dpi.png" target="_blank" class="border border-brand-border rounded overflow-hidden hover:opacity-90 transition">
+          <img src="./page_5_300dpi.png" alt="Page 5 Layout" class="w-full h-auto">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Table Section -->
+  <section id="pricing" class="bg-brand-surface border-t border-brand-border py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-xs font-mono font-bold text-brand-navy uppercase tracking-wider mb-2">Commercial Licenses</h2>
+        <h3 class="text-3xl font-extrabold text-brand-ink tracking-tight">Select Your License Tier</h3>
+        <p class="text-sm text-brand-muted mt-2">Secure digital fulfillment powered by Lemon Squeezy (Merchant of Record). Automatic B2B VAT / Tax Invoicing.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Tier 1 -->
+        <div class="bg-white rounded-lg border border-brand-border p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="text-xs font-mono font-bold text-brand-muted uppercase mb-1">Single Jurisdiction</div>
+            <h4 class="text-xl font-bold text-brand-ink mb-2">Solo Entity / Municipal</h4>
+            <div class="text-3xl font-extrabold text-brand-ink mb-4">$197 <span class="text-xs font-normal text-brand-muted">one-time</span></div>
+            <p class="text-xs text-brand-muted mb-6">Designed for a single city clerk, school district, or in-house compliance officer auditing internal systems.</p>
+            <ul class="space-y-2.5 text-xs text-brand-ink border-t border-brand-border pt-4 mb-6">
+              <li class="flex items-center space-x-2"><span>✓</span><span>Complete 5-Page Interactive PDF</span></li>
+              <li class="flex items-center space-x-2"><span>✓</span><span>Editable Word SOP & Excel Rubric</span></li>
+              <li class="flex items-center space-x-2"><span>✓</span><span>Single-Organization internal license</span></li>
+              <li class="flex items-center space-x-2 text-brand-muted"><span>✕</span><span>No client resale or white-label rights</span></li>
+            </ul>
+          </div>
+          <button onclick="handleCheckout('solo', event)" class="lemonsqueezy-button block w-full text-center bg-brand-card hover:bg-brand-border text-brand-ink font-bold py-2.5 px-4 rounded text-xs transition">
+            Buy Municipal License ($197)
+          </button>
+        </div>
+
+        <!-- Tier 2 (Featured) -->
+        <div class="bg-white rounded-lg border-2 border-brand-navy p-6 flex flex-col justify-between shadow-lg relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-navy text-white text-[10px] font-mono uppercase tracking-wider px-3 py-1 rounded-full font-bold">
+            Most Popular for Agencies
+          </div>
+          <div>
+            <div class="text-xs font-mono font-bold text-brand-navy uppercase mb-1">Commercial Agency</div>
+            <h4 class="text-xl font-bold text-brand-ink mb-2">Agency & Consultant</h4>
+            <div class="text-3xl font-extrabold text-brand-navy mb-4">$497 <span class="text-xs font-normal text-brand-muted">one-time</span></div>
+            <p class="text-xs text-brand-muted mb-6">Built for digital agencies, web developers, and accessibility contractors selling $2,500+ client audits.</p>
+            <ul class="space-y-2.5 text-xs text-brand-ink border-t border-brand-border pt-4 mb-6">
+              <li class="flex items-center space-x-2"><span>✓</span><span><strong>Unlimited Client Audit Rights</strong></span></li>
+              <li class="flex items-center space-x-2"><span>✓</span><span><strong>Full White-Label Rights</strong> on Word SOP & Excel</span></li>
+              <li class="flex items-center space-x-2"><span>✓</span><span>Client-Facing Conformance Reports</span></li>
+              <li class="flex items-center space-x-2"><span>✓</span><span>Priority Annual Regulatory Updates</span></li>
+            </ul>
+          </div>
+          <button onclick="handleCheckout('agency', event)" class="lemonsqueezy-button block w-full text-center bg-brand-navy hover:bg-brand-navyHover text-white font-bold py-3 px-4 rounded text-xs shadow transition">
+            Buy Agency Commercial License ($497)
+          </button>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="bg-white rounded-lg border border-brand-border p-6 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="text-xs font-mono font-bold text-brand-muted uppercase mb-1">Multi-Jurisdiction</div>
+            <h4 class="text-xl font-bold text-brand-ink mb-2">Enterprise / Regional</h4>
+            <div class="text-3xl font-extrabold text-brand-ink mb-4">$1,499 <span class="text-xs font-normal text-brand-muted">one-time</span></div>
+            <p class="text-xs text-brand-muted mb-6">For state agencies, university campus systems, and multi-department county governments.</p>
+            <ul class="space-y-2.5 text-xs text-brand-ink border-t border-brand-border pt-4 mb-6">
+              <li class="flex items-center space-x-2"><span>✓</span><span>Unlimited Internal Seats & Divisions</span></li>
+              <li class="flex items-center space-x-2"><span>✓</span><span>Multi-Department Transition Planning</span></li>
+              <li class="flex items-center space-x-2"><span>✓</span><span>Direct Technical Implementation Review</span></li>
+            </ul>
+          </div>
+          <button onclick="handleCheckout('enterprise', event)" class="lemonsqueezy-button block w-full text-center bg-brand-card hover:bg-brand-border text-brand-ink font-bold py-2.5 px-4 rounded text-xs transition">
+            Buy Enterprise License ($1,499)
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-brand-border py-8 text-xs text-brand-muted">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="font-mono">
+        PDF FOUNDRY // TECHNICAL DOCUMENT ENGINEERING & REGULATORY SYSTEMS
+      </div>
+      <div>
+        SHA-256 Release Fingerprint: <span class="font-mono text-brand-navy">b0f92940644f1acfa1d3a52b08b49facdf1a43ddbbf506d0977674605f668f28</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
