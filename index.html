@@ -18,8 +18,6 @@
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lemon Squeezy Modal Checkout Overlay Script -->
-  <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
   
   <script>
     tailwind.config = {
@@ -44,48 +42,9 @@
       }
     };
 
-    // =========================================================================
-    // LEMON SQUEEZY CONFIGURATION
-    // Replace with your Lemon Squeezy Store slug and Variant IDs after publishing:
-    // =========================================================================
-    window.LEMON_CONFIG = {
-      storeSlug: "pdf-foundry", // e.g. "my-agency" (from https://[storeSlug].lemonsqueezy.com)
-      variants: {
-        solo: "YOUR_SOLO_VARIANT_ID",         // Tier 1 ($197)
-        agency: "YOUR_AGENCY_VARIANT_ID",     // Tier 2 ($497)
-        enterprise: "YOUR_ENTERPRISE_VARIANT_ID" // Tier 3 ($1,499)
-      }
-    };
-
-    function handleCheckout(tierKey, event) {
-      const cfg = window.LEMON_CONFIG;
-      const variantId = cfg.variants[tierKey];
-
-      if (!variantId || variantId.startsWith("YOUR_")) {
-        event.preventDefault();
-        alert(
-          "Lemon Squeezy Setup Required:\\n\\n" +
-          "1. Publish your product in your Lemon Squeezy Dashboard.\\n" +
-          "2. Copy your Variant ID from Products -> Share -> Checkout Link.\\n" +
-          "3. Paste it into the window.LEMON_CONFIG block at the top of index.html.\\n\\n" +
-          "Refer to LEMON_SQUEEZY_SETUP_GUIDE.md for detailed steps."
-        );
-        return false;
-      }
-
-      // If configured, navigate via Lemon Squeezy overlay modal
-      const checkoutUrl = `https://${cfg.storeSlug}.lemonsqueezy.com/buy/${variantId}?embed=1`;
-      window.createLemonSqueezyCheckout ? window.createLemonSqueezyCheckout({ url: checkoutUrl }) : (window.location.href = checkoutUrl);
-      return false;
-    }
   </script>
 </head>
 <body class="bg-[#F8FAFC] text-brand-ink font-sans antialiased">
-
-  <!-- Top Announcement Bar -->
-  <div class="bg-brand-navy text-white text-xs py-2 px-4 text-center font-mono tracking-wide">
-    MANDATORY COMPLIANCE DEADLINE: DOJ 28 CFR PART 35 ENFORCEMENT BEGINS APRIL 24, 2026
-  </div>
 
   <!-- Header Navigation -->
   <header class="border-b border-brand-border bg-white sticky top-0 z-40">
@@ -160,7 +119,7 @@
           <img src="./storefront_cover_1280x720.png" alt="ADA Title II Audit Kit Hero Cover" class="w-full h-auto">
           <div class="p-3 bg-brand-card border-t border-brand-border flex items-center justify-between text-xs font-mono text-brand-muted">
             <span>Verified 725 KB Commercial ZIP</span>
-            <span class="text-brand-navy font-semibold">Lemon Squeezy Fulfillment</span>
+            <span class="text-brand-navy font-semibold">Instant Digital Download</span>
           </div>
         </div>
       </div>
@@ -265,7 +224,7 @@
       <div class="text-center max-w-2xl mx-auto mb-12">
         <h2 class="text-xs font-mono font-bold text-brand-navy uppercase tracking-wider mb-2">Commercial Licenses</h2>
         <h3 class="text-3xl font-extrabold text-brand-ink tracking-tight">Select Your License Tier</h3>
-        <p class="text-sm text-brand-muted mt-2">Secure digital fulfillment powered by Lemon Squeezy (Merchant of Record). Automatic B2B VAT / Tax Invoicing.</p>
+        <p class="text-sm text-brand-muted mt-2">Secure checkout by Stripe. Instant digital download after purchase.</p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
@@ -284,9 +243,9 @@
               <li class="flex items-center space-x-2 text-brand-muted"><span>✕</span><span>No client resale or white-label rights</span></li>
             </ul>
           </div>
-          <button onclick="handleCheckout('solo', event)" class="lemonsqueezy-button block w-full text-center bg-brand-card hover:bg-brand-border text-brand-ink font-bold py-2.5 px-4 rounded text-xs transition">
+          <a href="https://buy.stripe.com/cNi9AVcvyd9CdLZ5ffabK00" target="_blank" rel="noopener" class="block w-full text-center bg-brand-card hover:bg-brand-border text-brand-ink font-bold py-2.5 px-4 rounded text-xs transition">
             Buy Municipal License ($197)
-          </button>
+          </a>
         </div>
 
         <!-- Tier 2 (Featured) -->
@@ -306,9 +265,9 @@
               <li class="flex items-center space-x-2"><span>✓</span><span>Priority Annual Regulatory Updates</span></li>
             </ul>
           </div>
-          <button onclick="handleCheckout('agency', event)" class="lemonsqueezy-button block w-full text-center bg-brand-navy hover:bg-brand-navyHover text-white font-bold py-3 px-4 rounded text-xs shadow transition">
+          <a href="https://buy.stripe.com/7sY8wRcvyfhK37lfTTabK01" target="_blank" rel="noopener" class="block w-full text-center bg-brand-navy hover:bg-brand-navyHover text-white font-bold py-3 px-4 rounded text-xs shadow transition">
             Buy Agency Commercial License ($497)
-          </button>
+          </a>
         </div>
 
         <!-- Tier 3 -->
@@ -324,9 +283,9 @@
               <li class="flex items-center space-x-2"><span>✓</span><span>Direct Technical Implementation Review</span></li>
             </ul>
           </div>
-          <button onclick="handleCheckout('enterprise', event)" class="lemonsqueezy-button block w-full text-center bg-brand-card hover:bg-brand-border text-brand-ink font-bold py-2.5 px-4 rounded text-xs transition">
+          <a href="https://buy.stripe.com/3cIeVf67ab1ugYb377abK02" target="_blank" rel="noopener" class="block w-full text-center bg-brand-card hover:bg-brand-border text-brand-ink font-bold py-2.5 px-4 rounded text-xs transition">
             Buy Enterprise License ($1,499)
-          </button>
+          </a>
         </div>
 
       </div>
