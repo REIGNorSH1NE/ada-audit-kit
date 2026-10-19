@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | PDF Foundry</title>
+  <meta name="description" content="Contact PDF Foundry for support, refunds, and licensing questions.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { brand: { ink:'#0F172A', navy:'#1E3A8A', navyHover:'#172554', muted:'#334155', surface:'#F8FAFC', card:'#F1F5F9', border:'#CBD5E1' } },
+      fontFamily: { sans:['Segoe UI','system-ui','sans-serif'], mono:['Consolas','Menlo','monospace'] }
+    } } };
+  </script>
+</head>
+<body class="bg-[#F8FAFC] text-brand-ink font-sans antialiased">
+  <header class="border-b border-brand-border bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="./" class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded bg-brand-navy flex items-center justify-center text-white font-mono font-bold text-sm">PF</div>
+        <span class="font-bold text-brand-ink text-base tracking-tight">PDF Foundry</span>
+      </a>
+      <a href="./" class="text-sm font-medium text-brand-muted hover:text-brand-ink">&larr; Back to the Audit Kit</a>
+    </div>
+  </header>
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <h1 class="text-3xl font-extrabold tracking-tight mb-1">Contact</h1>
+    <p class="text-sm text-brand-muted mb-8">Effective October 19, 2026</p>
+    <div class="space-y-6 text-base leading-relaxed text-brand-muted">
+      <p>PDF Foundry is a division of Legacy Business Investments LLC, a Minnesota limited liability company.</p>
+      <h2 class="text-xl font-bold text-brand-ink pt-2">Email</h2>
+      <p><strong>legacybusiness25@gmail.com</strong></p>
+      <p>We aim to reply within 2 business days.</p>
+      <h2 class="text-xl font-bold text-brand-ink pt-2">What to include</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>the email address you used at checkout and your order receipt;</li>
+        <li>the license tier you purchased;</li>
+        <li>a short description of your question or problem, and screenshots if relevant.</li>
+      </ul>
+      <h2 class="text-xl font-bold text-brand-ink pt-2">Common requests</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><a class="underline text-brand-navy" href="refund.html">Refunds and the 14-day technical integrity guarantee</a></li>
+        <li><a class="underline text-brand-navy" href="terms.html">License tiers, upgrades, and permitted use</a></li>
+        <li><a class="underline text-brand-navy" href="privacy.html">Privacy and data requests</a></li>
+        <li>Download problems: tell us your order email and we will send a fresh link.</li>
+      </ul>
+    </div>
+  </main>
+  <footer class="bg-white border-t border-brand-border py-8 text-xs text-brand-muted">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="font-mono">PDF FOUNDRY // A DIVISION OF LEGACY BUSINESS INVESTMENTS LLC</div>
+      <nav aria-label="Legal" class="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <a href="refund.html" class="hover:text-brand-ink underline">Refund Policy</a>
+        <a href="terms.html" class="hover:text-brand-ink underline">Terms of Sale &amp; License</a>
+        <a href="privacy.html" class="hover:text-brand-ink underline">Privacy Policy</a>
+        <a href="contact.html" class="hover:text-brand-ink underline">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
